@@ -1,0 +1,177 @@
+* {
+    box-sizing: border-box;
+    background-color: antiquewhite;
+    padding: 0;
+    margin: 0;
+
+}
+
+header {
+    width: 1000px;
+    height: 610px;
+    position: relative;
+    top: 40px;
+    left: 170px;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2.5rem;
+    
+    text-align: center;
+}
+
+h3 {
+    font-size: 2rem;
+    text-align: left;
+}
+
+p {
+    font-size: 1rem;
+}
+
+#image_2mdhl {
+    width: 1000px;
+    height: 480px;
+}
+
+#logo_mdhl {
+    width: 120px;
+    height: 120px;
+}
+
+nav {
+    position: absolute;
+    top: 40px;
+    
+    background-color: transparent;
+}
+
+nav a {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    height: 40px;
+    width: 160px;
+    border: 2px solid black;
+    text-align: center;
+    box-shadow: 5px 5px rgb(240, 245, 245);
+    padding-top: 7px;
+
+}
+
+a[href="#"] {
+
+    background-color: green;
+}
+
+a[href="./about.html"] {
+
+    background-color: blue;
+}
+
+a[href="./contact.html"] {
+
+    background-color: blue;
+}
+
+a[href="./index.html"] {
+
+    background-color: blue;
+}
+
+a[href="./game_info.html"] {
+
+    background-color: blue;
+}
+
+a[href="./rules.html"] {
+
+    background-color: blue;
+}
+
+.home {
+    width: 1000px;
+    height: 500px;
+    position: relative;
+    top: 1px;
+    left: 170px;
+
+}
+
+.home img {
+    display: inline;
+    position:absolute;
+    top: 75px;
+    left: 5px;
+}
+
+.home aside {
+    display: inline-block;
+    position: relative;
+    top: 30px;
+    left: 200px;
+}
+
+.about {
+    width: 1000px;
+    height: 500px;
+    position: relative;
+    top: 1px;
+    left: 170px;
+
+}
+
+.about img {
+    display: inline;
+    position: absolute;
+    top: 75px;
+    left: 5px;
+}
+
+.about aside {
+    display: inline-block;
+    position: relative;
+    top: 30px;
+    left: 200px;
+    width: 630px;
+}
+
+.about h3{
+    text-align: left;
+}
+
+.contact {
+    width: 1000px;
+    height: 500px;
+    position: relative;
+    top: 1px;
+    left: 170px;
+
+}
+
+.contact img {
+    display: inline;
+    position: absolute;
+    top: 50px;
+    left: 5px;
+}
+
+.contact aside {
+    display: inline;
+    position: relative;
+    top: 30px;
+    left: 200px;
+}
+
+.contact h3{
+    text-align: center;
+}
+
+p {
+    text-indent: 40px;
+  }
