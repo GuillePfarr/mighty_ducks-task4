@@ -231,7 +231,78 @@
 
                 <label>
                     Parent/Guardian Signature
-                    <input class="signature" type="text" name="signature" id="signature">
+                    <!-- <input class="signature" type="text" name="signature" id="signature"> -->
+                    <style>
+                        #canvas {
+                            border: 1px solid #000;
+                        }
+                        .btn {
+                            margin-top: 10px;
+                        }
+                    </style>
+                
+                    <canvas id="canvas" width="400" height="200"></canvas>
+                    <br>
+                    <button class="btn" onclick="clearCanvas()">Clear</button>
+                    <br>
+                    <form>
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+                        <br>
+                        <label for="signature">Signature:</label>
+                        <input type="hidden" id="signature" name="signature" required>
+                        <br>
+                        <button class="btn" type="submit" onclick="submitForm()">Submit</button>
+                    </form>
+                    <script>
+                        var canvas = document.getElementById('canvas');
+                        var signatureInput = document.getElementById('signature');
+                        var context = canvas.getContext('2d');
+                        var isDrawing = false;
+                        var lastX = 0;
+                        var lastY = 0;
+                
+                        canvas.addEventListener('mousedown', startDrawing);
+                        canvas.addEventListener('mousemove', draw);
+                        canvas.addEventListener('mouseup', stopDrawing);
+                        canvas.addEventListener('mouseout', stopDrawing);
+                        canvas.addEventListener('touchstart', startDrawing);
+                        canvas.addEventListener('touchmove', draw);
+                        canvas.addEventListener('touchend', stopDrawing);
+                
+                        function startDrawing(e) {
+                            isDrawing = true;
+                            [lastX, lastY] = [e.offsetX, e.offsetY];
+                        }
+                
+                        function draw(e) {
+                            if (!isDrawing) return;
+                            e.preventDefault();
+                            var clientX = e.type.startsWith('touch') ? e.touches[0].clientX : e.clientX;
+                            var clientY = e.type.startsWith('touch') ? e.touches[0].clientY : e.clientY;
+                            context.beginPath();
+                            context.moveTo(lastX, lastY);
+                            context.lineTo(clientX, clientY);
+                            context.stroke();
+                            [lastX, lastY] = [clientX, clientY];
+                        }
+                
+                        function stopDrawing() {
+                            isDrawing = false;
+                            var dataUrl = canvas.toDataURL();
+                            signatureInput.value = dataUrl;
+                        }
+                
+                        function clearCanvas() {
+                            context.clearRect(0, 0, canvas.width, canvas.height);
+                            signatureInput.value = '';
+                        }
+                
+                        function submitForm() {
+                            // You can perform additional form validation or submit the form to a server
+                            alert('Form submitted successfully!');
+                        }
+                    </script>
                 </label>
 
                 <label>
